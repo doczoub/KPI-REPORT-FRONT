@@ -121,6 +121,7 @@ const Login = () => {
           />
         </div>
         <div className="bg-white md:w-2/5 max-w-md p-6 rounded-lg m-auto">
+          <h1 className="text-center text-3xl mb-32 font-semibold">KPI REPORT</h1>
       <h2 className="text-xl font-semibold text-center mb-4">Se Connecter</h2>
       <form className="space-y-4">
         <div>
