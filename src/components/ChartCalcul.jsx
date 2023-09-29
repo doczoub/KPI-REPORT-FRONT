@@ -40,35 +40,51 @@ const ChartCalcul = () => {
   if (showUserData.loading || showUserData1.loading) {
     return <div>Loading...</div>;
   }
+// ...
 
-  const donnee = showUserData.datas.map((calcul) => calcul.resultatObtenu);
-  const donneex = showUserData.datas.map((calcul) => calcul.periode);
-  const donnee1 = showUserData1.datas.map((calcul) => calcul.resultatObtenu);
-  const donneex1 = calculind?.data?.norme || null;
+// Data Preparation
+let donnee = [];
+let donneex = [];
+let donnee1 = [];
+let donneex1 = null;
 
-  const calculSeries = [
-    {
-      name: 'Resultat 2023',
-      type: 'column',
-      width: '80%',
-      label: 'Resultat obtenu',
-      data: donnee,
-    },
-    {
-      name: 'Resultat 2022',
-      type: 'column',
-      width: '80%',
-      label: 'Resultat obtenu',
-      data: donnee1,
-    },
-    {
-      name: 'Cible',
-      type: 'line',
-      width: '100%',
-      label: 'Cible',
-      data: Array(donneex.length).fill(donneex1),
-    },
-  ];
+if (Array.isArray(showUserData.datas)) {
+  donnee = showUserData.datas.map((calcul) => calcul.resultatObtenu);
+  donneex = showUserData.datas.map((calcul) => calcul.periode);
+}
+
+if (Array.isArray(showUserData1.datas)) {
+  donnee1 = showUserData1.datas.map((calcul) => calcul.resultatObtenu);
+}
+
+if (calculind && calculind.data && typeof calculind.data.norme !== 'undefined') {
+  donneex1 = calculind.data.norme;
+}
+
+const calculSeries = [
+  {
+    name: 'Resultat 2023',
+    type: 'column',
+    width: '80%',
+    label: 'Resultat obtenu',
+    data: donnee,
+  },
+  {
+    name: 'Resultat 2022',
+    type: 'column',
+    width: '80%',
+    label: 'Resultat obtenu',
+    data: donnee1,
+  },
+  {
+    name: 'Cible',
+    type: 'line',
+    width: '100%',
+    label: 'Cible',
+    data: Array(donneex.length).fill(donneex1),
+  },
+];
+
 
   const calculOptions = {
     chart: {
