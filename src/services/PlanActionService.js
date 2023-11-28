@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const CALCUL_BASE_URL = "http://localhost:8080/api/v1/planAction";
+const CALCUL_BASE_URL = "http://172.16.2.17:8080/api/v1/planAction";
 
 class PlanActionService{
     savePlanAction(planAction){

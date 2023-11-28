@@ -3,7 +3,7 @@ import axios from "axios";
 
 export const DeUserData = createAsyncThunk("fetching/DeUser",async()=>{
     
-    const response= await axios.get('http://localhost:8080/api/v1/user')
+    const response= await axios.get('http://172.16.2.17:8080/api/v1/user')
     // localStorage.setItem('indicateur', JSON.stringify( response.data)) 
     return response.data
 })

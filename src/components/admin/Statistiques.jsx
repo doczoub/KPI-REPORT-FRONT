@@ -56,34 +56,7 @@ const Statistiques = () => {
 
   return (
     <div>
-       {/* < div className="relative mx-4 my-4 flex flex-col min-w-0 break-words bg-white rounded mb-6 xl:mb-0 shadow-lg">
-        <div className="flex-auto p-2">
-          <div className="flex flex-wrap">
-            <div className="relative w-full pr-4 max-w-full flex-grow flex-1">
-              <h5 className="text-gray-400 uppercase font-bold text-xl">
-                DTD
-              </h5>
-              <div className=" flex flex-wrap">
-              <div className=" flex flex-wrap">
-              <p className="text-sm text-gray-400 ">
-            <span className=  "text-red-500  mr-2">
-              <i
-                className={
-                    "fas fa-arrow-up "
-                }
-              ></i>{" "}
-              100%
-            </span>
-          </p>
-              <span className="font-semibold text-xs text-gray-700 mr-2">
-                DTD_M55
-              </span>
-              </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div> */}
+   
 
 
  <h3 className="text-xl font-semibold m-4">Performance Par direction</h3>

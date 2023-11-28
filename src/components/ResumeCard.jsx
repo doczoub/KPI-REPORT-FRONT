@@ -26,7 +26,7 @@ const ResumeCard = () => {
   useEffect(() => {
     const getdirIndicateur = async () => {
       try {
-        const response = await axios.get(`http://localhost:8080/api/v1/indicateur/${id}`);
+        const response = await axios.get(`http://172.16.2.17:8080/api/v1/indicateur/${id}`);
         console.log("API response:", response); // Log the response data
         setCalculind(response);
       } catch (error) {

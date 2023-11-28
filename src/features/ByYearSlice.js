@@ -5,7 +5,7 @@ export const ByYearData = createAsyncThunk("fetching/ByYear", async(id)=>{
     const an = new Date();
     const annee= an.getFullYear();
     
-    const response= await axios.get(`http://localhost:8080/api/v1/calcul/by-year/${annee}/indicateur/${id}`)
+    const response= await axios.get(`http://172.16.2.17:8080/api/v1/calcul/by-year/${annee}/indicateur/${id}`)
     localStorage.setItem('byyear', JSON.stringify( response.data)) 
     return response.data
 })

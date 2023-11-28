@@ -17,8 +17,8 @@ export default function Acceuil() {
           </a>
           <div className="hidden md:flex space-x-6">
             <NavLink to="/" className="text-[#F5F5DC] hover:text-gray-300">Accueil</NavLink>
-            <NavLink to="/about" className="text-[#F5F5DC] hover:text-gray-300">À Propos</NavLink>
-            <NavLink to="/contact" className="text-[#F5F5DC] hover:text-gray-300">Contact</NavLink>
+            <NavLink to="#" className="text-[#F5F5DC] hover:text-gray-300">À Propos</NavLink>
+            <NavLink to="#" className="text-[#F5F5DC] hover:text-gray-300">Contact</NavLink>
           </div>
           <button
             className="md:hidden text-[#F5F5DC] hover:text-gray-300"
@@ -28,9 +28,9 @@ export default function Acceuil() {
           </button>
         </div>
       </nav>
-      <div className="container mx-auto text-center md:text-left px-6 flex-grow">
+      <div className="container mx-auto text-center md:text-left px-6 flex-grow justify-center items-center">
         <h1 className="text-[#F5F5DC] text-4xl md:text-6xl text-center font-bold mt-10 mb-6">KPI Report</h1>
-        <div className="md:flex items-center">
+        <div className="md:flex items-center justify-center">
           <div className="md:w-1/2">
             <img src={imgacceuil} alt="Hero" className="object-cover w-full h-full" />
           </div>

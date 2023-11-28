@@ -37,8 +37,6 @@ const PerformanceResume = () => {
       return "😐"; // Neutral face emoji
     } else if (percentage === 100) {
       return "😍"; // Heart eyes emoji
-    } else {
-      return "😡"; // Angry emoji
     }
   }
 

@@ -47,7 +47,7 @@ const SuiviCalcul = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.post("http://localhost:8080/api/v1/suivi",suivi)
+      const response = await axios.post("http://172.16.2.17:8080/api/v1/suivi",suivi)
       console.log(response.data);
       if (response.status === 200) {
         toast.success("User data saved successfully", {

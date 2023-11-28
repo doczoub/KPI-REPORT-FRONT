@@ -51,13 +51,13 @@ const Login = () => {
     const user = { nomuser, motpass };
 
     // const response = await axios.post(
-    //   "http://localhost:8080/api/auth/signin",
+    //   "http://172.16.2.17:8080/api/auth/signin",
     //   user
     // );
     try {
       setIsLoading(true);
       const response = await axios.post(
-        "http://localhost:8080/api/auth/signin",
+        "http://172.16.2.17:8080/api/auth/signin",
         user
       );
       if (!response.data.id) {

@@ -3,7 +3,7 @@ import axios from "axios";
 
 export const CalculIndicateurData = createAsyncThunk("fetching/AllData", async(id)=>{
     
-    const response= await axios.get(`http://localhost:8080/api/v1/calcul/indicateurId/${id}`)
+    const response= await axios.get(`http://172.16.2.17:8080/api/v1/calcul/indicateurId/${id}`)
     localStorage.setItem('calculIndicateur', JSON.stringify( response.data)) 
     return response.data
 })

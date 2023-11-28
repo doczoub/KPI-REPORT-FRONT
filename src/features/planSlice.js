@@ -3,7 +3,7 @@ import axios from "axios";
 
 export const userPlan = createAsyncThunk("authentification/userPlan", async(id)=>{
     
-    const response= await axios.get(`http://localhost:8080/api/v1/planAction/userId/${id}`)
+    const response= await axios.get(`http://172.16.2.17:8080/api/v1/planAction/userId/${id}`)
     // localStorage.setItem('userCalcul', JSON.stringify( response.data)) 
     return response.data
 })

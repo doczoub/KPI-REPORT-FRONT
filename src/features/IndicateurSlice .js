@@ -3,7 +3,7 @@ import axios from "axios";
 
 export const IndicateurData = createAsyncThunk("fetching/IndicateurData", async()=>{
     
-    const response= await axios.get('http://localhost:8080/api/v1/indicateur')
+    const response= await axios.get('http://172.16.2.17:8080/api/v1/indicateur')
     return response.data
 })
     

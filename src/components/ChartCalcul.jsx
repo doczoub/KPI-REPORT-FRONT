@@ -25,7 +25,7 @@ const ChartCalcul = () => {
   useEffect(() => {
     const getIndicateurData = async () => {
       try {
-        const response = await axios.get(`http://localhost:8080/api/v1/indicateur/${id}`);
+        const response = await axios.get(`http://172.16.2.17:8080/api/v1/indicateur/${id}`);
         setCalculind(response);
       } catch (error) {
         console.error('Error fetching data:', error);

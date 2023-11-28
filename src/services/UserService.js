@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const USER_BASE_URL = "http://localhost:8080/api/v1/user";
+const USER_BASE_URL = "http://172.16.2.17:8080/api/v1/user";
 
 class UserService{
     saveUser(user){

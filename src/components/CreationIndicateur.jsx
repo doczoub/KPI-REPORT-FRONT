@@ -59,7 +59,7 @@ const CreationIndicateur = () => {
     };
     try {
       const response = await axios.post(
-        "http://localhost:8080/api/v1/indicateur",
+        "http://172.16.2.17:8080/api/v1/indicateur",
         formattedPayload
       );
 
@@ -83,7 +83,7 @@ const CreationIndicateur = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8080/api/v1/user")
+      .get("http://172.16.2.17:8080/api/v1/user")
       .then((response) => {
         setListUser(response.data);
       })
@@ -94,7 +94,7 @@ const CreationIndicateur = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8080/api/v1/indicateur")
+      .get("http://172.16.2.17:8080/api/v1/indicateur")
       .then((response) => {
         setListIndicateur(response.data);
       })
@@ -105,7 +105,7 @@ const CreationIndicateur = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8080/api/v1/direction")
+      .get("http://172.16.2.17:8080/api/v1/direction")
       .then((response) => {
         setListDirection(response.data);
       })

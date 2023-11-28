@@ -6,7 +6,7 @@ export const ByPreYearData = createAsyncThunk("fetching/ByPreYear", async(id)=>{
     const annee= an.getFullYear();
     const preAnnee=annee-1
     
-    const response= await axios.get(`http://localhost:8080/api/v1/calcul/by-year/${preAnnee}/indicateur/${id}`)
+    const response= await axios.get(`http://172.16.2.17:8080/api/v1/calcul/by-year/${preAnnee}/indicateur/${id}`)
     localStorage.setItem('bypreyear', JSON.stringify( response.data)) 
     return response.data
 })

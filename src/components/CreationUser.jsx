@@ -19,22 +19,21 @@ const CreationUser = () => {
     nomuser: "",
     email: "",
     motpass: "",
-    role: new Set(),
+    role: "",
     userDirection: "",
-    userService:""
   });
 
-  const handleChange = (e) => {
-    const value = e.target.value;
-    setUser({ ...user, [e.target.name]: value });
-    console.log(setUser);
+const handleChange = (e) => {
+  const { name, value } = e.target;
+  setUser((prevUser) => ({ ...prevUser, [name]: value }));
+  console.log(user); // Log the updated state
 }
 
 const handleRoleChange = (event) => {
   const role = event.target.value;
   setUser((prevUser) => ({
     ...prevUser,
-    role: new Set([role]),
+    role: role,
   }));
 };
 
@@ -48,18 +47,15 @@ const handleSubmit = async (e) => {
     nomuser: user.nomuser,
     email: user.email,
     motpass: user.motpass,
-    role: [...user.role],
+    role: user.role,
     userDirection: {
       id: user.userDirection
-    },
-    userService: {
-      id: user.userService
     }
   };
 
   try {
     const response = await axios.post(
-      "http://localhost:8080/api/auth/signup",
+      "http://172.16.2.17:8080/api/auth/signup",
       formattedPayload
     );
 
@@ -84,7 +80,7 @@ const handleSubmit = async (e) => {
 
  useEffect(() => {
    
-  axios.get('http://localhost:8080/api/v1/direction')
+  axios.get('http://172.16.2.17:8080/api/v1/direction')
   .then((response) =>{
     setListDirection(response.data)
  }).catch(error =>{
@@ -94,7 +90,7 @@ const handleSubmit = async (e) => {
 
  useEffect(() => {
    
-  axios.get('http://localhost:8080/api/v1/service')
+  axios.get('http://172.16.2.17:8080/api/v1/service')
   .then((response) =>{
    setListService(response.data)
  }).catch(error =>{
@@ -194,7 +190,7 @@ const handleSubmit = async (e) => {
                 ))}
                 </select>
               </div>
-              <div className="sm:col-span-3">
+              {/* <div className="sm:col-span-3">
                 <label className=" block text-sm font-medium leading-6 text-gray-900">
                   {" "}
                   Service{" "}
@@ -210,18 +206,20 @@ const handleSubmit = async (e) => {
                   <option key={lesserviceItem.id} value={lesserviceItem.id}> {lesserviceItem.serviceName}</option>
                 ))}
                 </select>
-              </div>
+              </div> */}
               <div className="sm:col-span-3">
                                 <label className=' block text-sm font-medium leading-6 text-gray-900'> Role </label>
                                 <select id="small"
                   className="block w-full rounded-md border-0 p-2.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                                     name='role'
-                                    value={user.role.size > 0 ? [...user.role][0] : ''}
+                                    value={user.role}
                                     onChange={handleRoleChange}>
                                     <option value="">choisir</option>
                                     <option value="admin">administrateur</option>
-                                    <option value="mod">moderateur</option>
                                     <option value="user">utilisateur</option>
+                                    <option value="manager">manager de processus</option>
+                                    <option value="pilote">pilote de processus</option>
+                                    <option value="sousPilote">sous pilote de processus</option>
                                 </select>
                             </div>
             </div>

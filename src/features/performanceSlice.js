@@ -5,7 +5,7 @@ export const performanceData = createAsyncThunk(
   "fetching/performanceData",
   async (id) => {
     const response = await axios.get(
-      `http://localhost:8080/api/v1/calcul/performance/${id}`
+      `http://172.16.2.17:8080/api/v1/calcul/performance/${id}`
     );
     return response.data;
   }

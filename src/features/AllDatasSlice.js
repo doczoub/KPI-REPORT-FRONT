@@ -3,7 +3,7 @@ import axios from "axios";
 
 export const AllData = createAsyncThunk("fetching/AllData", async()=>{
     
-    const response= await axios.get('http://localhost:8080/api/v1/calcul')
+    const response= await axios.get('http://172.16.2.17:8080/api/v1/calcul')
     localStorage.setItem('AllCalcul', JSON.stringify( response.data)) 
     return response.data
 })

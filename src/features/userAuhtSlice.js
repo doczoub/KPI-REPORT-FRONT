@@ -16,7 +16,7 @@ export const auth = createAsyncThunk("authLogin/userLogin", async(user,thunkApi)
     
     try {
     const response = await axios.post(
-      "http://localhost:8080/api/auth/signin",
+      "http://172.16.2.17:8080/api/auth/signin",
       {nomuser:user.nomuser,
         motpass: user.motpass
     }
